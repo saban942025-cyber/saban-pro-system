@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 import path from 'path';
 
-// תצורה אופטימלית לפיתוח ולפרודקשן
 export default defineConfig({
   plugins: [
     react(),
@@ -18,15 +17,14 @@ export default defineConfig({
         background_color: '#ffffff',
         display: 'standalone',
         orientation: 'portrait',
-        start_url: '/',
         icons: [
           {
-            src: 'pwa-192x192.png',
+            src: '/pwa-192x192.png', // שימוש בנתיב מוחלט
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: 'pwa-512x512.png',
+            src: '/pwa-512x512.png', // שימוש בנתיב מוחלט
             sizes: '512x512',
             type: 'image/png',
           },
@@ -39,8 +37,8 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  server: {
-    port: 3000,
-    open: true, // פותח את הדפדפן אוטומטית
-  },
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+  }
 });
