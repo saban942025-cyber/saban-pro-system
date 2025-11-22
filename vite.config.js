@@ -4,6 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 import path from 'path';
 
 export default defineConfig({
+  // הסרנו את base: './'
   plugins: [
     react(),
     VitePWA({
@@ -19,12 +20,12 @@ export default defineConfig({
         orientation: 'portrait',
         icons: [
           {
-            src: '/pwa-192x192.png', // שימוש בנתיב מוחלט
+            src: '/pwa-192x192.png', // נתיב מוחלט
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: '/pwa-512x512.png', // שימוש בנתיב מוחלט
+            src: '/pwa-512x512.png', // נתיב מוחלט
             sizes: '512x512',
             type: 'image/png',
           },
